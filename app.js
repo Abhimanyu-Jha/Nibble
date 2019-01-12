@@ -30,10 +30,10 @@ app.post('/search',urlencodedParser,(req,res)=>{
 
 	//SEARCH QUERY "q"
 	searchQuery= details.searchQuery;
-	console.log('searchQuery',searchQuery);
+	longitude= details.longitude;
+	latitude= details.latitude;
+	
 
-	longitude=''
-	latitude=''
 	//FETCH API
 
 
@@ -43,7 +43,7 @@ app.post('/search',urlencodedParser,(req,res)=>{
 
 
 	//THIS SHOULD BE AT THE END
-	res.render('results',{club: 'club', dp:'dp' });
+	res.render('results',{searchQuery: searchQuery, dp:'dp' });
 
 });
 

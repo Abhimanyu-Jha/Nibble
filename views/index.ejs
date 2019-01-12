@@ -94,12 +94,52 @@
     <label for="searchQuery" class="sr-only">Search for restaurant or dishes</label>
     <input type="text" id="searchQuery" name='searchQuery' class="form-control" placeholder="Enter keywords" required autofocus>
     <div style="padding-bottom: 8px;"></div>
-    
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+
+
+    <button id='submitButton'class="btn btn-lg btn-primary btn-block" type="submit" disabled>Please Enable Location</button>
+    <div style="padding-bottom: 8px;"></div>
+    <div class="checkbox mb-3">
+    <label>
+      <input onClick='locationCheck(this)' id='locationAccess' type="checkbox" value="location-access">&nbsp;Allow location access.
+    </label>
+    </div>
+
     <p class="mt-5 mb-3 text-muted">Developed by Potatoes</p>
+    
+    <input type="text" id='longitude' name="longitude" hidden/>
+    <input type="text" id='latitude' name="latitude" hidden/>
   </form>
 </main>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
-        <script src="https://getbootstrap.com/docs/4.2/examples/offcanvas/offcanvas.js"></script></body>
+<script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
+<script src="https://getbootstrap.com/docs/4.2/examples/offcanvas/offcanvas.js"></script></body>
+
+<script type="text/javascript">
+  function locationCheck(x){
+    
+    if (x.checked == true){
+    enableCoordinates();
+    }else{
+      submitButton.setAttribute('disabled','True');
+      submitButton.innerText='Allow location access.';
+    }
+  }
+  // checkbox = document.getElementById('locationAccess');
+  
+  function enableCoordinates() {
+    var startPos;
+
+    var geoSuccess = function(position) {
+    //UNBLOCK SEARCH BUTTON
+
+    submitButton=document.getElementById('submitButton');
+    submitButton.removeAttribute('disabled');
+    submitButton.innerText='Search';
+    startPos = position;
+    document.getElementById('longitude').value=startPos.coords.longitude;
+    document.getElementById('latitude').value=startPos.coords.latitude;
+    };
+    navigator.geolocation.getCurrentPosition(geoSuccess);
+  };
+</script>        
 </html>
