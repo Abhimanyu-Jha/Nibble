@@ -1,0 +1,18 @@
+{
+  "name": "Events",
+  "short_name": "Events",
+  "icons": [{
+    "src": "/nibble-logo.png",
+    "sizes": "213x213",
+    "type": "image/png"
+    },{
+      "src": "/nibble-logo.png",
+      "sizes": "2917x2917",
+      "type": "image/png"
+    }],
+
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#EEEEEE",
+  "theme_color": "#000000"
+}
