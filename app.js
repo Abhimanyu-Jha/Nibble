@@ -30,12 +30,48 @@ app.post('/search',urlencodedParser,(req,res)=>{
 
 	//SEARCH QUERY "q"
 	searchQuery= details.searchQuery;
-	longitude= details.longitude;
-	latitude= details.latitude;
+	var longitude= details.longitude;
+	var latitude= details.latitude;
 	
 
 	//FETCH API
+	var minval=Number.MAX_VALUE;
+	var finalname;
+	var branch;
+	var arr=searchQuery.split(" ");
+	var q="";
+	for (i=0; i<arr.length; i++){
+		if (i!=arr.length-1){	
+			q+=arr[i]+"+";}
+		else{
+			q+=arr[i];
+		}
+	}
+	//'https://developers.zomato.com/api/v2.1/search?q='+q+'&lat='+lat+'&lon='+long
+	fetch('https://developers.zomato.com/api/v2.1/search?q='+q+'&lat='+latitude+'&lon='+longitude, {
+	    method: 'get',
+	    headers: { 'Content-Type': 'application/json', 'user-key': '36da13412751dbe1d60d070e8b57be60' },
 
+	})
+	.then(res => res.json())
+	.then(function(json){ 
+	    var myarr=json.restaurants;
+	    for (i=0;i<myarr.length;i++){
+	    	var x=myarr[i];
+	    	console.log(x);
+	    	var a=0;
+	    	if (x.restaurant.name==searchQuery){
+	    		console.log("inside");
+	    		a=Math.abs(latitude-x.restaurant.location.latitude)+Math.abs(longitude-x.restaurant.location.longitude);
+	    		if (a<minval){
+	    			minval=a;
+	    			finalname=x.restaurant.name;
+	    			branch=x.restaurant.location.locality;
+	    		}
+	    	}
+	    }
+	    console.log(finalname+branch);
+	});
 
 
 
