@@ -10,10 +10,13 @@ app.use('/js',express.static('js'));
 app.use('/images',express.static('images'));
 app.use('/',express.static(__dirname));
 
+//SETTING THE VIEW ENGINE
+app.set('view engine','ejs');
 
 //SERVING HTML PAGES
 app.get('/',function(req,res){
-	res.sendFile(__dirname +'/index.html')
+	// {club: req.params.club, dp:req.user.thumbnail }
+	res.render('index',{club: '', dp:'' });
 });
 
 
