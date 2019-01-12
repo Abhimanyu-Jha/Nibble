@@ -1,0 +1,23 @@
+{
+  "name": "nibble",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sahat/hackathon-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sahat/hackathon-starter/issues"
+  },
+  "homepage": "https://github.com/sahat/hackathon-starter#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "ip": "^1.1.5"
+  }
+}
