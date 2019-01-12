@@ -1,14 +1,17 @@
 //NODE MODULES
 const express=require('express');
-
-// Start Express
+const bodyParser = require('body-parser');
 const app=express();
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+// Start Express
+
 
 //SERVING STATIC CONTENT
 app.use('/css',express.static('css'));
 app.use('/js',express.static('js'));
 app.use('/images',express.static('images'));
 app.use('/',express.static(__dirname));
+app.use(bodyParser.json());
 
 //SETTING THE VIEW ENGINE
 app.set('view engine','ejs');
@@ -17,8 +20,32 @@ app.set('view engine','ejs');
 app.get('/',function(req,res){
 	// {club: req.params.club, dp:req.user.thumbnail }
 	res.render('index',{club: '', dp:'' });
-});
+	
+	
+	
 
+});
+app.post('/search',urlencodedParser,(req,res)=>{
+	var details=req.body;
+
+	//SEARCH QUERY "q"
+	searchQuery= details.searchQuery;
+	console.log('searchQuery',searchQuery);
+
+	longitude=''
+	latitude=''
+	//FETCH API
+
+
+
+
+
+
+
+	//THIS SHOULD BE AT THE END
+	res.render('results',{club: 'club', dp:'dp' });
+
+});
 
 
 
