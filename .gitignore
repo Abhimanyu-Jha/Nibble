@@ -1,1 +1,5 @@
 /node_modules
+/images/*
+!/images/.gitkeep
+!/css/.gitkeep
+!/js/.gitkeep
