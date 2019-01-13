@@ -2,15 +2,15 @@
 Helps compare the prices from multiple food delivery apps and provide the cheapest option available to the user.
 
 ### Dev Setup
-1.Install
-     NodeJS: https://nodejs.org
-     Python: https://python.org
-2.Clone this repository
-     git clone https://github.com/Abhimanyu-Jha/Nibble.git
-3.Install required packages
-     `npm install`
-     `pip install bs4`
-     `pip install jsonschema`
-     `pip install selenium`
-     `pip install lxml`
+1. Install
+     1. NodeJS: https://nodejs.org
+     2. Python: https://python.org
+2. Clone this repository
+     1. git clone https://github.com/Abhimanyu-Jha/Nibble.git
+3. Install required packages
+     1. `npm install`
+     2. `pip install bs4`
+     3. `pip install jsonschema`
+     4. `pip install selenium`
+     5. `pip install lxml`
 4.Start server with the command `node app.js`
