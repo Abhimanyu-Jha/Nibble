@@ -69,8 +69,8 @@
 		</form>
 		</div>	
 	</nav>
-
-<div class="nav-scroller bg-white shadow-sm">
+<!-- SUBNAV -->
+<!-- <div class="nav-scroller bg-white shadow-sm">
   <nav class="nav nav-underline">
     <a class="nav-link active" href="#">Dashboard</a>
     <a class="nav-link" href="#">
@@ -85,7 +85,7 @@
     <a class="nav-link" href="#">Link</a>
     <a class="nav-link" href="#">Link</a>
   </nav>
-</div>
+</div> -->
 
 <main role="main" class="container">
   <form id='searchForm' class="form-signin" action="/search" method='POST'>
@@ -109,6 +109,7 @@
     <input type="text" id='longitude' name="longitude" hidden/>
     <input type="text" id='latitude' name="latitude" hidden/>
   </form>
+
 </main>
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 <script
@@ -120,6 +121,8 @@
 <script src="https://getbootstrap.com/docs/4.2/examples/offcanvas/offcanvas.js"></script></body>
 
 <script type="text/javascript">
+  //LOCATION ACCESS SCRIPT
+
   window.onLoad(locationCheck());
   function locationCheck(x){
     
@@ -148,4 +151,7 @@
     navigator.geolocation.getCurrentPosition(geoSuccess);
   };
 </script>        
+
+
+
 </html>

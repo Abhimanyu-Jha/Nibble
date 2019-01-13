@@ -16,6 +16,21 @@
 
 
     <style>
+    table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+    }
+
+    table tr:last-child td:last-child {
+        border-bottom-right-radius: 10px;
+    }
+    table tr:first-child td:first-child{
+        border-top-left-radius: 10px;
+
+    }
+    table tr:first-child td:last-child{
+        border-top-right-radius: 10px;
+
+    }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -26,7 +41,9 @@
           font-size: 3.5rem;
         }
       }
-
+      img{
+        
+      }
     </style>
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.2/examples/offcanvas/offcanvas.css" rel="stylesheet">
@@ -69,28 +86,96 @@
 		</form>
 		</div>	
 	</nav>
-
-<div class="nav-scroller bg-white shadow-sm">
-  <nav class="nav nav-underline">
-    <a class="nav-link active" href="#">Dashboard</a>
-    <a class="nav-link" href="#">
-      Friends
-      <span class="badge badge-pill bg-light align-text-bottom">27</span>
-    </a>
-    <a class="nav-link" href="#">Explore</a>
-    <a class="nav-link" href="#">Suggestions</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-    <a class="nav-link" href="#">Link</a>
-  </nav>
-</div>
+  <div style="padding-bottom: 15px;"></div>
 
 <main role="main" class="container">
- <h1>SEARCH RESULTS HERE "<%= searchQuery %>"</h1>
+    <div>
+        <img style="border-radius: 10px; max-width: 90vw" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wkk9tk1udabalhibu0og">
+        <p>
+        <h2>Burger Singh</h2>
+        <h5>Kalkaji Mandir</h5>
+        </p>
+    </div>
+    
+
+    <div style="padding-bottom: 8px;"></div>
+    <table style="background-color: #fbfcfc" class="table table-light">
+
+        <tbody>
+        <tr style="background-color: #343a4014">
+        <td colspan="2">
+        <h5 class="card-title">Potato Crunch Burger</h5>
+        <p class="card-text">A crispy potato patty crowned with lettuce, onions & liquid cheese; topped with Burger Singh’s White Guy sauce.</p>
+        </td>
+        </tr>
+        <tr style="background-color: #f3881e33"></strong>
+        <td scope="row"><h1>₹68</h1></td>
+        <td><img style='height: 70px;
+        width: auto;' src="https://www.swiggy.com/partner-with-us/wp-content/uploads/2018/06/Logo.png"></td>
+        </tr>
+        <tr style="background-color: #de19196e">
+        <td scope="row"><h1>₹124</h1></td>
+        <td><img style='height: 70px;
+        width: auto;' src="http://internfeel.com/wp-content/uploads/2016/09/Zomato-Logo-640x300.jpg"></td>
+        </tr>
+        </tbody>
+    </table>
+    <div style="padding-bottom: 8px;"></div>
+    <table style="background-color: #fbfcfc" class="table table-light">
+
+        <tbody>
+        <tr style="background-color: #343a4014">
+        <td colspan="2">
+        <h5 class="card-title">Potato Crunch Burger</h5>
+        <p class="card-text">A crispy potato patty crowned with lettuce, onions & liquid cheese; topped with Burger Singh’s White Guy sauce.</p>
+        </td>
+        </tr>
+        <tr style="background-color: #f3881e33"></strong>
+        <td scope="row"><h1>₹68</h1></td>
+        <td><img style='height: 70px;
+        width: auto;' src="https://www.swiggy.com/partner-with-us/wp-content/uploads/2018/06/Logo.png"></td>
+        </tr>
+        <tr style="background-color: #de19196e">
+        <td scope="row"><h1>₹124</h1></td>
+        <td><img style='height: 70px;
+        width: auto;' src="http://internfeel.com/wp-content/uploads/2016/09/Zomato-Logo-640x300.jpg"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="padding-bottom: 8px;"></div>
+    <table style="background-color: #fbfcfc" class="table table-light">
+
+        <tbody>
+        <tr style="background-color: #343a4014">
+        <td colspan="2">
+        <h5 class="card-title">Potato Crunch Burger</h5>
+        <p class="card-text">A crispy potato patty crowned with lettuce, onions & liquid cheese; topped with Burger Singh’s White Guy sauce.</p>
+        </td>
+        </tr>
+        <tr style="background-color: #f3881e33"></strong>
+        <td scope="row"><h1>₹68</h1></td>
+        <td><img style='height: 70px;
+        width: auto;' src="https://www.swiggy.com/partner-with-us/wp-content/uploads/2018/06/Logo.png"></td>
+        </tr>
+        <tr style="background-color: #de19196e">
+        <td scope="row"><h1>₹124</h1></td>
+        <td><img style='height: 70px;
+        width: auto;' src="http://internfeel.com/wp-content/uploads/2016/09/Zomato-Logo-640x300.jpg"></td>
+        </tr>
+        </tbody>
+    </table>
+
 </main>
+
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
         <script src="https://getbootstrap.com/docs/4.2/examples/offcanvas/offcanvas.js"></script></body>
+
+<script type="text/javascript">
+  // AUTOMATE CARD GENERATION FROM DATA
+  var data = '<%= data %>';
+  alert(data);
+</script>
 </html>
