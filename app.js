@@ -82,11 +82,11 @@ app.post('/search',urlencodedParser,(req,res)=>{
 
 
 	data={
-		'restaurant-name':'Burger Singh',
-		'location':'Kalkaji Mandir',
-		'menu':{'Potato Crunch Burger':['description',['₹68','₹100']]},
-		'links':['swiggy.com','zomato.com'],
-		'photo-link':'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wkk9tk1udabalhibu0og'
+		restaurant_name:'Burger Singh',
+		location:'Kalkaji Mandir',
+		menu:{'Potato Crunch Burger':['description',['₹68','₹100']]},
+		links:['swiggy.com','zomato.com'],
+		photo-link:'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wkk9tk1udabalhibu0og'
 	};
 
 	//THIS SHOULD BE AT THE END
