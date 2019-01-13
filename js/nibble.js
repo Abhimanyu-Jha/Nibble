@@ -3,8 +3,18 @@
 // const fetch = require('node-fetch');
 // var mainarr;
 $("#searchQuery").on('input',function(){
-	// var mainarr;
 	console.log("blah");
+	function inside(arr,s)
+	{
+		for(i=0;i<arr.length;i++)
+		{
+			if(arr[i].toLowerCase()===s.toLowerCase())
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 	var value=$("#searchQuery").val();
 	var arr=value.split(" ");
 	var q="";
@@ -19,48 +29,61 @@ $("#searchQuery").on('input',function(){
 	}
 	fetch('https://developers.zomato.com/api/v2.1/search?q='+q+'&lat='+latitude+'&lon='+longitude, {
 	        method: 'get',
-	        headers: { 'Content-Type': 'application/json', 'user-key': '36da13412751dbe1d60d070e8b57be60' },
+	        headers: { 'Content-Type': 'application/json', 'user-key': '4d85d015e7c7d33f1f4d85edd738bfbb' },
 
 	})
 	.then((res) => res.json())
 	    .then(function(json){ 
 	    	var mainarr=[];
 	    	var myarr=json.restaurants;
-	    	console.log('mainarr',mainarr);
-	    	console.log('myarr',myarr);
-	    	count=0;
-	    	i=0;
-	    	var temp=[];
-	    	while (true && myarr.length!=0){
-	    		if (count==5){
-	    			console.log("breaking");
+	    	
+	    	var i=0;
+	    	while(i<myarr.length&&mainarr.length<5)
+	    	{
+	    		var rest=myarr[i];
+	    		if(myarr[i]==null)
+	    		{
 	    			break;
-	    		}
-	    		var x=myarr[i];
-	    		if(x==null){
-	    			console.log("donedone");
-	    			break;
-	    		}
-	    		console.log('x',x);
-	    		if (i==0){
-	    			console.log(mainarr+"tring");
-	    			mainarr.push(x.restaurant.name);
-	    			temp.push(x.restaurant.name);
-	    			count++;
-	    		}
-	    		else if (temp[i-1]!=x.restaurant.name){
-	    			console.log(mainarr+"tringu");
-	    			mainarr.push(x.restaurant.name);
-	    			temp.push(x.restaurant.name);
-	    			count++;
+	    		} 
+	    		if(!inside(mainarr,rest.restaurant.name)) 
+	    		{
+	    			mainarr.push(rest.restaurant.name);
 	    		}
 	    		i++;
+	    	}
+	    	console.log(mainarr);
+	    	while(mainarr.length<5)
+	    	{
+	    		mainarr.push('');
+	    	}
+	    	j=0;
+	    	y=document.getElementById("list_menu");
+	    	if ($("#searchQuery").val()==''){
+	    		console.log("khaali");
+	    		y.style.display="none";
+	    	}
+	    	
+	    	while(j<5)
+	    	{
+	    		id="i"+j;
+	    		x=document.getElementById(id);
+	    		
+	    		x.innerHTML=mainarr[j];
+	    		if (x.innerHTML==''){
+	    			x.style.display="none";
+	    			console.log("blank value"+j);
+	    		}
+	    		else{
+	    			x.style.display="block";
+	    			y.style.display="block";
+	    			if ($("#searchQuery").val()==''){
+			    		console.log("khaali");
+			    		y.style.display="none";
+			    	}
+	    		}
+	    		j++;
+	    	}
 
-
-	    	}console.log(mainarr+"myaar");
-
-
-	    
 	    });
 	    
 
