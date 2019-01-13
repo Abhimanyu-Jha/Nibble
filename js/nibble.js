@@ -3,6 +3,8 @@
 // const fetch = require('node-fetch');
 // var mainarr;
 $("#searchQuery").on('input',function(){
+
+	// $("#list_menu").style.display="block";
 	console.log("blah");
 	function inside(arr,s)
 	{
@@ -67,7 +69,12 @@ $("#searchQuery").on('input',function(){
 	    	{
 	    		id="i"+j;
 	    		x=document.getElementById(id);
-	    		
+	    		// x.on('click',function(){
+	    		// 	console.log("click detected");
+	    		// 	field=document.getElementById("searchQuery");
+	    		// 	field.val(mainarr[j]);
+	    		// });
+
 	    		x.innerHTML=mainarr[j];
 	    		if (x.innerHTML==''){
 	    			x.style.display="none";
@@ -81,6 +88,10 @@ $("#searchQuery").on('input',function(){
 			    		y.style.display="none";
 			    	}
 	    		}
+	    		x.addEventListener("click",function(){
+	    			console.log("hufifuhfiuwf");
+	    			document.getElementById("searchQuery").value=x.innerHTML;
+	    		});
 	    		j++;
 	    	}
 
