@@ -89,16 +89,72 @@
   <div style="padding-bottom: 15px;"></div>
 
 <main role="main" class="container">
-    <div>
-        <img style="border-radius: 10px; max-width: 90vw" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wkk9tk1udabalhibu0og">
+    <div id='preInfo'>
+        <img id='photo' style="border-radius: 10px; max-width: 90vw" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wkk9tk1udabalhibu0og">
         <p>
-        <h2>Burger Singh</h2>
-        <h5>Kalkaji Mandir</h5>
+        <h2 id='restaurant_name'>Burger Singh</h2>
+        <h5 id='location'>Kalkaji Mandir</h5>
         </p>
     </div>
-    
-
     <div style="padding-bottom: 8px;"></div>
+    <table  hidden id='card' style="background-color: #fbfcfc" class="table table-light">
+
+        <tbody>
+        <tr style="background-color: #343a4014">
+        <td colspan="2">
+        <h5 id='foodName'class="card-title"></h5>
+        <p id='desc' class="card-text"></p>
+        </td>
+        </tr>
+        <tr id='swiggyCard' style="background-color: #f3881e33"></strong>
+        <td id='swiggyPrice' scope="row"><h1>₹68</h1></td>
+        <td><img style='height: 70px;
+        width: auto;' src="https://www.swiggy.com/partner-with-us/wp-content/uploads/2018/06/Logo.png"></td>
+        </tr>
+        <tr id='zomatoCard' style="background-color: #de19196e">
+        <td id='zomatoPrice' scope="row"><h1>₹124</h1></td>
+        <td><img style='height: 70px;
+        width: auto;' src="http://internfeel.com/wp-content/uploads/2016/09/Zomato-Logo-640x300.jpg"></td>
+        </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        // AUTOMATE CARD GENERATION FROM DATA
+        parent=document.querySelector('.container');
+        var data = '<%= data %>';
+        //HARDCODED DATA
+        data={
+         restaurant_name:'Burger Singh',
+         location:'Kalkaji Mandir',
+         menu:{'Potato Crunch Burger':['description',['₹68','₹100']],
+                'Chicken Burger':['description',['₹68','₹100']]},
+         links:['swiggy.com','zomato.com'],
+         photo_link:"http://www.dwarka21.com/uploads/images/burger-1.jpg"
+        };
+
+        // data.restaurant_name
+        // data.location
+        for (key in data.menu){
+            console.log(key,data.menu[key]);
+        }
+        data.menu.key=value
+        // value[0]
+        // value[1][0]
+        // value[1][1]
+        parent=document.querySelector('.container');
+        card=document.getElementById('card');
+        for(i=0;i<5;i++){
+            newCard=card.cloneNode(true);
+            newCard.removeAttribute('hidden')
+            newCard.querySelector('.card-title').innerText='Potato Crunch Burger';
+            //DO stuff with newCard
+            parent.appendChild(newCard);
+        }
+        
+
+        console.log(data);
+    </script>
+<!--     <div style="padding-bottom: 8px;"></div>
     <table style="background-color: #fbfcfc" class="table table-light">
 
         <tbody>
@@ -141,30 +197,7 @@
         width: auto;' src="http://internfeel.com/wp-content/uploads/2016/09/Zomato-Logo-640x300.jpg"></td>
         </tr>
         </tbody>
-    </table>
-
-    <div style="padding-bottom: 8px;"></div>
-    <table style="background-color: #fbfcfc" class="table table-light">
-
-        <tbody>
-        <tr style="background-color: #343a4014">
-        <td colspan="2">
-        <h5 class="card-title">Potato Crunch Burger</h5>
-        <p class="card-text">A crispy potato patty crowned with lettuce, onions & liquid cheese; topped with Burger Singh’s White Guy sauce.</p>
-        </td>
-        </tr>
-        <tr style="background-color: #f3881e33"></strong>
-        <td scope="row"><h1>₹68</h1></td>
-        <td><img style='height: 70px;
-        width: auto;' src="https://www.swiggy.com/partner-with-us/wp-content/uploads/2018/06/Logo.png"></td>
-        </tr>
-        <tr style="background-color: #de19196e">
-        <td scope="row"><h1>₹124</h1></td>
-        <td><img style='height: 70px;
-        width: auto;' src="http://internfeel.com/wp-content/uploads/2016/09/Zomato-Logo-640x300.jpg"></td>
-        </tr>
-        </tbody>
-    </table>
+    </table> -->
 
 </main>
 
@@ -173,9 +206,5 @@
       <script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
         <script src="https://getbootstrap.com/docs/4.2/examples/offcanvas/offcanvas.js"></script></body>
 
-<script type="text/javascript">
-  // AUTOMATE CARD GENERATION FROM DATA
-  var data = '<%= data.restaurant_name %>';
-  console.log(data);
-</script>
+
 </html>
