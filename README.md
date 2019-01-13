@@ -13,4 +13,4 @@ Helps compare the prices from multiple food delivery apps and provide the cheape
      3. `pip install jsonschema`
      4. `pip install selenium`
      5. `pip install lxml`
-4.Start server with the command `node app.js`
+4. Start server with the command `node app.js`
