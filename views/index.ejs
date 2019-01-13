@@ -26,6 +26,22 @@
           font-size: 3.5rem;
         }
       }
+      .btn-primary, .btn-primary:hover{
+        background-color: #e35b32;
+        border-color: #e35b32;
+      }
+      .btn-primary:hover{
+        background-color: #e35b32;
+        border-color:#ff9100;
+      }
+      .btn-primary.disabled, .btn-primary:disabled{
+        background-color: #e35b32;
+        border-color: #e35b32;
+      }
+      .btn-primary.active{
+        background-color: #e35b32;
+        border-color: #e35b32;
+      }
 
     </style>
     <!-- Custom styles for this template -->
@@ -89,11 +105,18 @@
 
 <main role="main" class="container">
   <form id='searchForm' class="form-signin" action="/search" method='POST'>
-    <img class="mb-4" src="" alt="" width="72" height="72">
+    <center><img class="mb-4" src="/icons/Nibble_Complete.png" alt="" style="width: 70%;height: auto; padding-top: 18px;"></center>
     <h1 class="h3 mb-3 font-weight-normal">Find best prices for food on Nibble</h1>
     <label for="searchQuery" class="sr-only">Search for restaurant or dishes</label>
     <input type="text" id="searchQuery" name='searchQuery' class="form-control" placeholder="Enter keywords" required autofocus>
     <div style="padding-bottom: 8px;"></div>
+    <div class="list-group" id="list_menu" hidden>
+      <a href="#" id ="i0" class="list-group-item list-group-item-action"></a>
+      <a href="#" id ="i1" class="list-group-item list-group-item-action"></a>
+      <a href="#" id ="i2" class="list-group-item list-group-item-action"></a>
+      <a href="#" id ="i3" class="list-group-item list-group-item-action"></a>
+      <a href="#" id ="i4" class="list-group-item list-group-item-action"></a>
+    </div>
 
 
     <button id='submitButton'class="btn btn-lg btn-primary btn-block" type="submit" disabled>Please Enable Location</button>
@@ -116,7 +139,7 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-<script src="js/nibble.js" type="text/javascript"></script>
+<!-- <script src="js/nibble.js" type="text/javascript"></script> -->
 <script>window.jQuery || document.write('<script src="/docs/4.2/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
 <script src="https://getbootstrap.com/docs/4.2/examples/offcanvas/offcanvas.js"></script></body>
 

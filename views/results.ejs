@@ -12,7 +12,7 @@
 
     <link rel="manifest" href="/manifest.json">
     <!-- Bootstrap core CSS -->
-	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 
     <style>
@@ -51,49 +51,49 @@
 </head>
 
 <body class="bg-light text-center">
-	<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-		<a class="navbar-brand mr-auto mr-lg-0" href="#">Nibble&nbsp;</a>
-		<button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-		<span class="navbar-toggler-icon"></span>
-		</button>
+ <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand mr-auto mr-lg-0" href="#">Nibble&nbsp;</a>
+  <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+  <span class="navbar-toggler-icon"></span>
+  </button>
 
-		<div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-		<ul class="navbar-nav mr-auto">
-		<li class="nav-item active">
-		<a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
-		</li>
-		<li class="nav-item">
-		<a class="nav-link" href="#">Notifications</a>
-		</li>
-		<li class="nav-item">
-		<a class="nav-link" href="#">Profile</a>
-		</li>
-		<li class="nav-item">
-		<a class="nav-link" href="#">Switch account</a>
-		</li>
-		<li class="nav-item dropdown">
-		<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
-		<div class="dropdown-menu" aria-labelledby="dropdown01">
-		<a class="dropdown-item" href="#">Action</a>
-		<a class="dropdown-item" href="#">Another action</a>
-		<a class="dropdown-item" href="#">Something else here</a>
-		</div>
-		</li>
-		</ul>
-		<form class="form-inline my-2 my-lg-0">
-		<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form>
-		</div>	
-	</nav>
+  <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item active">
+  <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" href="#">Notifications</a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" href="#">Profile</a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" href="#">Switch account</a>
+  </li>
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown01">
+  <a class="dropdown-item" href="#">Action</a>
+  <a class="dropdown-item" href="#">Another action</a>
+  <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+  </li>
+  </ul>
+  <form class="form-inline my-2 my-lg-0">
+  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  </div> 
+ </nav>
   <div style="padding-bottom: 15px;"></div>
 
 <main role="main" class="container">
     <div id='preInfo'>
-        <img id='photo' style="border-radius: 10px; max-width: 90vw" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wkk9tk1udabalhibu0og">
+        <img class='mainImg' id='photo' style="border-radius: 10px; max-width: 90vw" src="">
         <p>
-        <h2 id='restaurant_name'>Burger Singh</h2>
-        <h5 id='location'>Kalkaji Mandir</h5>
+        <h2 id='restaurant_name'></h2>
+        <h5 id='location'></h5>
         </p>
     </div>
     <div style="padding-bottom: 8px;"></div>
@@ -102,17 +102,18 @@
         <tbody>
         <tr style="background-color: #343a4014">
         <td colspan="2">
-        <h5 id='foodName'class="card-title"></h5>
+        <h4 id='foodName'class="card-title"></h4>
         <p id='desc' class="card-text"></p>
         </td>
         </tr>
-        <tr id='swiggyCard' style="background-color: #f3881e33"></strong>
-        <td id='swiggyPrice' scope="row"><h1>₹68</h1></td>
+        <tr class='swiggyCard' style="background-color: #f3881e33"></strong>
+        <td scope="row"><h1 class='swiggyPrice'></h1></td>
         <td><img style='height: 70px;
-        width: auto;' src="https://www.swiggy.com/partner-with-us/wp-content/uploads/2018/06/Logo.png"></td>
+        width: auto;' src="https://www.swiggy.com/partner-with-us/wp-content/uploads/2018
+/06/Logo.png"></td>
         </tr>
-        <tr id='zomatoCard' style="background-color: #de19196e">
-        <td id='zomatoPrice' scope="row"><h1>₹124</h1></td>
+        <tr class='zomatoCard' style="background-color: #de19196e">
+        <td scope="row"><h1 class='zomatoPrice'></h1></td>
         <td><img style='height: 70px;
         width: auto;' src="http://internfeel.com/wp-content/uploads/2016/09/Zomato-Logo-640x300.jpg"></td>
         </tr>
@@ -121,38 +122,54 @@
     <script type="text/javascript">
         // AUTOMATE CARD GENERATION FROM DATA
         parent=document.querySelector('.container');
-        var data = '<%= data %>';
+        
+        var data=<%- data %>;
+        for(var key in data) {
+            console.log(key,data[key]);
+        }
         //HARDCODED DATA
-        data={
-         restaurant_name:'Burger Singh',
-         location:'Kalkaji Mandir',
-         menu:{'Potato Crunch Burger':['description',['₹68','₹100']],
-                'Chicken Burger':['description',['₹68','₹100']]},
-         links:['swiggy.com','zomato.com'],
-         photo_link:"http://www.dwarka21.com/uploads/images/burger-1.jpg"
-        };
+        // data={
+        //  restaurant_name:'Burger King',
+        //  location:'Kalkaji Mandir',
+        //  menu:{'Potato Crunch Burger':['A crispy potato patty crowned with lettuce, onions & liquid cheese; topped with Burger Singh’s White Guy sauce.',['₹78','₹10']],
+        //         'Chicken Burger':['A crispy potato patty crowned with lettuce, onions & liquid cheese; topped with Burger Singh’s White Guy sauce.',['₹68','₹100']]},
+        //  links:['http://www.swiggy.com','http://www.zomato.com'],
+        //  photo_link:"http://www.dwarka21.com/uploads/images/burger-1.jpg"
+        // };
 
+
+        // parent.querySelector('.mainImg').src='photo_link';
+        document.getElementById('restaurant_name').innerText=data.restaurant_name;
+        document.getElementById('location').innerText=data.location;
+        parent.querySelector('.mainImg').src=data.img;
         // data.restaurant_name
         // data.location
+        card=document.getElementById('card');
         for (key in data.menu){
             console.log(key,data.menu[key]);
-        }
-        data.menu.key=value
-        // value[0]
-        // value[1][0]
-        // value[1][1]
-        parent=document.querySelector('.container');
-        card=document.getElementById('card');
-        for(i=0;i<5;i++){
+
             newCard=card.cloneNode(true);
             newCard.removeAttribute('hidden')
-            newCard.querySelector('.card-title').innerText='Potato Crunch Burger';
+            newCard.querySelector('.card-title').innerText=key;
+            newCard.querySelector('.card-text').innerText=data.menu[key][0];
+            newCard.querySelector('.swiggyPrice').innerText=data.menu[key][1][0];
+            newCard.querySelector('.zomatoPrice').innerText=data.menu[key][1][1];
+            newCard.querySelector('.swiggyCard').setAttribute('onclick',"location.href='"+data.links[0]+"'");
+            newCard.querySelector('.zomatoCard').setAttribute('onclick',"location.href='"+data.links[1]+"'");
+           
             //DO stuff with newCard
             parent.appendChild(newCard);
-        }
+        }        
+        // for(i=0;i<5;i++){
+        //     newCard=card.cloneNode(true);
+        //     newCard.removeAttribute('hidden')
+        //     newCard.querySelector('.card-title').innerText='Potato Crunch Burger';
+        //     //DO stuff with newCard
+        //     parent.appendChild(newCard);
+        // }
         
 
-        console.log(data);
+    
     </script>
 <!--     <div style="padding-bottom: 8px;"></div>
     <table style="background-color: #fbfcfc" class="table table-light">
@@ -186,7 +203,9 @@
         <p class="card-text">A crispy potato patty crowned with lettuce, onions & liquid cheese; topped with Burger Singh’s White Guy sauce.</p>
         </td>
         </tr>
-        <tr style="background-color: #f3881e33"></strong>
+        <tr style="b
+ [Photo]
+ackground-color: #f3881e33"></strong>
         <td scope="row"><h1>₹68</h1></td>
         <td><img style='height: 70px;
         width: auto;' src="https://www.swiggy.com/partner-with-us/wp-content/uploads/2018/06/Logo.png"></td>
