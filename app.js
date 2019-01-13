@@ -77,16 +77,16 @@ app.post('/search',urlencodedParser,(req,res)=>{
 	    }
 	    // console.log(finalname+' '+branch);
 	});
+	//SIDHANT AND AYAAN USE FILENAME FOR RESTERAUNT NAME AND BRANCH FOR LOCATION
 
 
-
-
+	//FINALLY PREPARE ME THIS JSON OBJECT SIMILAR TO THIS SO THAT I CAN AUTOMATE FRONTEND
 	data={
 		restaurant_name:'Burger Singh',
 		location:'Kalkaji Mandir',
 		menu:{'Potato Crunch Burger':['description',['₹68','₹100']]},
 		links:['swiggy.com','zomato.com'],
-		photo-link:'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wkk9tk1udabalhibu0og'
+		photo_link:"http://www.dwarka21.com/uploads/images/burger-1.jpg"
 	};
 
 	//THIS SHOULD BE AT THE END
