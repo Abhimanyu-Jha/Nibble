@@ -21,9 +21,9 @@ app.set('view engine','ejs');
 app.get('/',function(req,res){
 	// {club: req.params.club, dp:req.user.thumbnail }
 	res.render('index',{club: '', dp:'' });
-	
-	
-	
+
+
+
 
 });
 app.post('/search',urlencodedParser,(req,res)=>{
@@ -44,7 +44,7 @@ app.post('/search',urlencodedParser,(req,res)=>{
 	var arr=searchQuery.split(" ");
 	var q="";
 	for (i=0; i<arr.length; i++){
-		if (i!=arr.length-1){	
+		if (i!=arr.length-1){
 			q+=arr[i]+"+";}
 		else{
 			q+=arr[i];
@@ -54,11 +54,11 @@ app.post('/search',urlencodedParser,(req,res)=>{
 	//'https://developers.zomato.com/api/v2.1/search?q='+q+'&lat='+lat+'&lon='+long
 	fetch('https://developers.zomato.com/api/v2.1/search?q='+q+'&lat='+latitude+'&lon='+longitude, {
 	    method: 'get',
-	    headers: { 'Content-Type': 'application/json', 'user-key': '36da13412751dbe1d60d070e8b57be60' },
+	    headers: { 'Content-Type': 'application/json', 'user-key': '4d85d015e7c7d33f1f4d85edd738bfbb' },
 
 	})
 	.then(res => res.json())
-	.then(function(json){ 
+	.then(function(json){
 	    var myarr=json.restaurants;
 	    for (i=0;i<myarr.length;i++){
 	    	var x=myarr[i];
@@ -66,7 +66,7 @@ app.post('/search',urlencodedParser,(req,res)=>{
 	    	var a=0;
 	    	// console.log(x.restaurant.name.toLowerCase(),"blah");
 	    	if (x.restaurant.name.toLowerCase()==searchQuery){
-	    		
+
 	    		a=Math.abs(latitude-x.restaurant.location.latitude)+Math.abs(longitude-x.restaurant.location.longitude);
 	    		if (a<minval){
 	    			minval=a;
@@ -108,7 +108,7 @@ app.use(function (req, res) {
 })
 
 // gets local IP
-const ip = require("ip"); 
+const ip = require("ip");
 var port = process.env.PORT || 8000
 
 app.listen(port, function() {
