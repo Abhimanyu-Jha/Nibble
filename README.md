@@ -14,3 +14,9 @@ Helps compare the prices from multiple food delivery apps and provide the cheape
      4. `pip install selenium`
      5. `pip install lxml`
 4. Start server with the command `node app.js`
+
+### Creators
+1. Abhimanyu Jha
+2. Ayaan Kakkar
+3. Sidhant S Sarkar
+4. Isha Gupta
